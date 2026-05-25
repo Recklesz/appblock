@@ -65,76 +65,6 @@ h1 {
   font-weight: 700;
 }
 
-.labelCallout {
-  position: absolute;
-  top: clamp(42px, 9vh, 92px);
-  left: clamp(24px, 7vw, 112px);
-  color: var(--marker);
-  font-family: "Comic Sans MS", "Marker Felt", ui-rounded, system-ui, sans-serif;
-  font-size: clamp(28px, 4.8vw, 70px);
-  font-weight: 900;
-  letter-spacing: 0;
-  text-shadow: 0 3px 0 rgba(255, 255, 255, 0.8);
-  transform: rotate(-6deg);
-}
-
-.labelCallout::after {
-  content: "";
-  position: absolute;
-  width: clamp(140px, 19vw, 270px);
-  height: clamp(70px, 9vw, 126px);
-  left: 74%;
-  top: 58%;
-  border-bottom: clamp(5px, 0.6vw, 9px) solid var(--marker);
-  border-right: clamp(5px, 0.6vw, 9px) solid var(--marker);
-  border-radius: 0 0 70% 0;
-  transform: rotate(18deg);
-}
-
-.labelCallout::before {
-  content: "";
-  position: absolute;
-  width: clamp(24px, 3vw, 42px);
-  height: clamp(24px, 3vw, 42px);
-  left: calc(74% + clamp(128px, 17vw, 248px));
-  top: calc(58% + clamp(58px, 7.5vw, 104px));
-  border-right: clamp(5px, 0.6vw, 9px) solid var(--marker);
-  border-bottom: clamp(5px, 0.6vw, 9px) solid var(--marker);
-  transform: rotate(-7deg);
-}
-
-.speech {
-  position: absolute;
-  top: clamp(80px, 14vh, 150px);
-  right: clamp(22px, 8vw, 128px);
-  min-width: clamp(150px, 20vw, 270px);
-  padding: clamp(16px, 2.2vw, 26px) clamp(20px, 3vw, 36px);
-  background: #fff;
-  border: clamp(4px, 0.5vw, 7px) solid var(--marker);
-  border-radius: 52% 48% 45% 55% / 58% 46% 54% 42%;
-  color: var(--marker);
-  font-family: "Comic Sans MS", "Marker Felt", ui-rounded, system-ui, sans-serif;
-  font-size: clamp(30px, 5vw, 76px);
-  font-weight: 900;
-  text-align: center;
-  text-transform: uppercase;
-  transform: rotate(5deg);
-  box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.28);
-}
-
-.speech::after {
-  content: "";
-  position: absolute;
-  left: 18%;
-  bottom: -31px;
-  width: 54px;
-  height: 42px;
-  background: #fff;
-  border-right: clamp(4px, 0.5vw, 7px) solid var(--marker);
-  border-bottom: clamp(4px, 0.5vw, 7px) solid var(--marker);
-  transform: rotate(26deg) skew(-22deg);
-}
-
 @media (max-width: 520px) {
   .blocked {
     background-position: 58% center;
@@ -143,15 +73,5 @@ h1 {
   .notice {
     bottom: 18px;
     box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.35);
-  }
-
-  .labelCallout {
-    top: 22px;
-    left: 18px;
-  }
-
-  .speech {
-    top: 104px;
-    right: 16px;
   }
 }
