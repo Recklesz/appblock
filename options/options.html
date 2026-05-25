@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Local Site Blocker Options</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="layout">
+      <section class="intro">
+        <p class="eyebrow">Local Site Blocker</p>
+        <h1>Manage blocked websites</h1>
+        <p class="summary">Blocking applies to the exact domain and its subdomains on this Chrome profile.</p>
+      </section>
+
+      <section class="panel">
+        <div class="toolbar">
+          <label class="switchRow">
+            <input id="enabledToggle" type="checkbox">
+            <span>Enable blocking</span>
+          </label>
+        </div>
+
+        <form id="addForm" class="addForm">
+          <label for="siteInput">Website domain</label>
+          <div>
+            <input id="siteInput" type="text" placeholder="reddit.com">
+            <button type="submit">Add website</button>
+          </div>
+        </form>
+
+        <div class="bulk">
+          <label for="bulkInput">Bulk edit</label>
+          <textarea id="bulkInput" spellcheck="false" placeholder="youtube.com&#10;instagram.com&#10;news.ycombinator.com"></textarea>
+          <div class="bulkActions">
+            <button id="saveBulkButton" type="button">Save list</button>
+            <button id="exportButton" type="button">Copy list</button>
+          </div>
+        </div>
+
+        <div class="listHeader">
+          <span id="count">0 blocked</span>
+          <button id="clearButton" type="button">Clear all</button>
+        </div>
+        <ul id="siteList" class="siteList"></ul>
+      </section>
+    </main>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

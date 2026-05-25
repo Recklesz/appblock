@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Local Site Blocker</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="header">
+        <div>
+          <p class="eyebrow">Local Site Blocker</p>
+          <h1 id="statusTitle">Blocking is on</h1>
+        </div>
+        <label class="switch" title="Toggle blocking">
+          <input id="enabledToggle" type="checkbox">
+          <span></span>
+        </label>
+      </header>
+
+      <section class="current">
+        <div>
+          <p class="label">Current site</p>
+          <p id="currentSite" class="site">No website tab detected</p>
+        </div>
+        <button id="currentAction" class="primary" type="button" disabled>Block</button>
+      </section>
+
+      <form id="addForm" class="form">
+        <label for="siteInput">Add website</label>
+        <div class="inputRow">
+          <input id="siteInput" type="text" autocomplete="off" placeholder="youtube.com">
+          <button type="submit" title="Add site">+</button>
+        </div>
+      </form>
+
+      <section class="controls">
+        <button id="optionsButton" type="button">Manage list</button>
+      </section>
+
+      <section>
+        <div class="listHeader">
+          <p>Blocked sites</p>
+          <span id="count">0</span>
+        </div>
+        <ul id="siteList" class="siteList"></ul>
+      </section>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
