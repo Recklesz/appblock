@@ -8,7 +8,7 @@ A small unpacked Chrome extension for local website blocking. It is inspired by 
 - Block or unblock the current website.
 - Add domains manually, for example `youtube.com`.
 - Manage the full list from the options page.
-- Redirect blocked pages to a local extension page.
+- Redirect blocked pages to a local extension page with randomized background art.
 
 ## Load Locally
 
