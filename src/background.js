@@ -1,4 +1,4 @@
-import { getState, isBlockingActive, normalizeSite, siteMatchesHostname } from "./storage.js";
+import { getState, normalizeSite, siteMatchesHostname } from "./storage.js";
 
 const blockedPageUrl = chrome.runtime.getURL("blocked/blocked.html");
 
@@ -15,8 +15,6 @@ async function redirectIfBlocked(details) {
   if (details.frameId !== 0 || !isBlockableUrl(details.url)) return;
 
   const state = await getState();
-  if (!isBlockingActive(state)) return;
-
   const url = new URL(details.url);
   const hostname = normalizeSite(url.hostname);
   const matchedSite = state.blockedSites.find((site) => siteMatchesHostname(site, hostname));

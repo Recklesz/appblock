@@ -4,10 +4,10 @@ A small unpacked Chrome extension for local website blocking. It is inspired by 
 
 ## Features
 
-- Toggle all blocking on or off from the popup.
-- Block or unblock the current website.
+- Block or unblock the current website from the popup, with the active tab reloading immediately.
 - Add domains manually, for example `youtube.com`.
-- Manage the full list from the options page.
+- Open **More** in the popup for manual add, bulk edit, copy, clear, and per-site removal.
+- Manage the full list from the options page when opened from extension details.
 - Redirect blocked pages to a local extension page with randomized background art.
 
 ## Load Locally

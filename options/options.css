@@ -71,7 +71,6 @@ h1 {
   border-radius: 8px;
 }
 
-.toolbar,
 .bulkActions,
 .listHeader {
   display: flex;
@@ -80,20 +79,6 @@ h1 {
   gap: 12px;
 }
 
-.switchRow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 700;
-}
-
-.switchRow input {
-  width: 18px;
-  height: 18px;
-  accent-color: var(--accent);
-}
-
-.toolbar button,
 .bulkActions button,
 .listHeader button,
 .addForm button {
@@ -200,7 +185,6 @@ h1 {
     padding: 24px 0;
   }
 
-  .toolbar,
   .bulkActions,
   .listHeader,
   .addForm div {

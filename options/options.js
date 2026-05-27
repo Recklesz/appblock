@@ -1,6 +1,5 @@
 import { getState, normalizeSite, setState, uniqueSortedSites } from "../src/storage.js";
 
-const enabledToggle = document.querySelector("#enabledToggle");
 const addForm = document.querySelector("#addForm");
 const siteInput = document.querySelector("#siteInput");
 const bulkInput = document.querySelector("#bulkInput");
@@ -13,7 +12,6 @@ const count = document.querySelector("#count");
 let state;
 
 function render() {
-  enabledToggle.checked = state.enabled;
   count.textContent = `${state.blockedSites.length} blocked`;
   bulkInput.value = state.blockedSites.join("\n");
   siteList.textContent = "";
@@ -47,11 +45,6 @@ async function saveSites(sites) {
   state = await setState({ ...state, blockedSites: uniqueSortedSites(sites) });
   render();
 }
-
-enabledToggle.addEventListener("change", async () => {
-  state = await setState({ ...state, enabled: enabledToggle.checked });
-  render();
-});
 
 addForm.addEventListener("submit", async (event) => {
   event.preventDefault();

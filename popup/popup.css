@@ -24,7 +24,8 @@ body {
 }
 
 button,
-input {
+input,
+textarea {
   font: inherit;
 }
 
@@ -47,18 +48,13 @@ button:disabled {
 
 .header,
 .current,
-.form,
-.controls,
-section:last-child {
+.more {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 14px;
 }
 
@@ -77,46 +73,6 @@ h1 {
   margin: 3px 0 0;
   font-size: 20px;
   line-height: 1.2;
-}
-
-.switch {
-  position: relative;
-  display: inline-flex;
-  width: 44px;
-  height: 26px;
-}
-
-.switch input {
-  position: absolute;
-  opacity: 0;
-}
-
-.switch span {
-  width: 100%;
-  border-radius: 999px;
-  background: #d0d5dd;
-  transition: background 160ms ease;
-}
-
-.switch span::after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.24);
-  transition: transform 160ms ease;
-}
-
-.switch input:checked + span {
-  background: var(--accent);
-}
-
-.switch input:checked + span::after {
-  transform: translateX(18px);
 }
 
 .current {
@@ -143,10 +99,49 @@ h1 {
   font-weight: 700;
 }
 
+.more {
+  overflow: hidden;
+}
+
+.more summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 42px;
+  padding: 0 12px;
+  color: var(--ink);
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.more summary::-webkit-details-marker {
+  display: none;
+}
+
+.more summary::after {
+  content: "+";
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.more[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.more[open] summary::after {
+  content: "-";
+}
+
+.moreBody {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+}
+
 .form {
   display: grid;
   gap: 8px;
-  padding: 12px;
 }
 
 .inputRow {
@@ -170,18 +165,55 @@ h1 {
 }
 
 .inputRow button,
-.controls button {
+.bulkActions button {
   height: 38px;
   background: #eef2f6;
   color: var(--ink);
   font-weight: 700;
 }
 
-.controls {
+.bulk {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 8px;
-  padding: 10px;
+}
+
+.bulk label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.bulk textarea {
+  width: 100%;
+  min-height: 94px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 9px 10px;
+  outline: none;
+  line-height: 1.4;
+}
+
+.bulk textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.bulkActions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.bulkActions button {
+  min-width: 0;
+  padding: 0 8px;
+}
+
+.listPanel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .listHeader {

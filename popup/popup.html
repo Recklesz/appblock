@@ -9,14 +9,8 @@
   <body>
     <main class="shell">
       <header class="header">
-        <div>
-          <p class="eyebrow">Local Site Blocker</p>
-          <h1 id="statusTitle">Blocking is on</h1>
-        </div>
-        <label class="switch" title="Toggle blocking">
-          <input id="enabledToggle" type="checkbox">
-          <span></span>
-        </label>
+        <p class="eyebrow">Local Site Blocker</p>
+        <h1>Current website</h1>
       </header>
 
       <section class="current">
@@ -27,25 +21,36 @@
         <button id="currentAction" class="primary" type="button" disabled>Block</button>
       </section>
 
-      <form id="addForm" class="form">
-        <label for="siteInput">Add website</label>
-        <div class="inputRow">
-          <input id="siteInput" type="text" autocomplete="off" placeholder="youtube.com">
-          <button type="submit" title="Add site">+</button>
-        </div>
-      </form>
+      <details id="morePanel" class="more">
+        <summary>More</summary>
+        <div class="moreBody">
+          <form id="addForm" class="form">
+            <label for="siteInput">Add website</label>
+            <div class="inputRow">
+              <input id="siteInput" type="text" autocomplete="off" placeholder="youtube.com">
+              <button type="submit" title="Add site">+</button>
+            </div>
+          </form>
 
-      <section class="controls">
-        <button id="optionsButton" type="button">Manage list</button>
-      </section>
+          <section class="bulk" aria-label="Bulk blocked sites">
+            <label for="bulkInput">Bulk edit</label>
+            <textarea id="bulkInput" spellcheck="false" placeholder="youtube.com&#10;instagram.com"></textarea>
+            <div class="bulkActions">
+              <button id="saveBulkButton" type="button">Save list</button>
+              <button id="exportButton" type="button">Copy list</button>
+              <button id="clearButton" type="button">Clear all</button>
+            </div>
+          </section>
 
-      <section>
-        <div class="listHeader">
-          <p>Blocked sites</p>
-          <span id="count">0</span>
+          <section class="listPanel">
+            <div class="listHeader">
+              <p>Blocked sites</p>
+              <span id="count">0</span>
+            </div>
+            <ul id="siteList" class="siteList"></ul>
+          </section>
         </div>
-        <ul id="siteList" class="siteList"></ul>
-      </section>
+      </details>
     </main>
     <script type="module" src="popup.js"></script>
   </body>

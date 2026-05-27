@@ -1,13 +1,10 @@
 const DEFAULT_STATE = {
-  enabled: true,
   blockedSites: []
 };
 
 export async function getState() {
   const stored = await chrome.storage.local.get(DEFAULT_STATE);
   return {
-    ...DEFAULT_STATE,
-    ...stored,
     blockedSites: Array.isArray(stored.blockedSites) ? stored.blockedSites : []
   };
 }
@@ -50,10 +47,6 @@ export function siteMatchesHostname(site, hostname) {
     Boolean(normalizedSite) &&
     (normalizedHost === normalizedSite || normalizedHost.endsWith(`.${normalizedSite}`))
   );
-}
-
-export function isBlockingActive(state) {
-  return Boolean(state.enabled);
 }
 
 export function uniqueSortedSites(sites) {
