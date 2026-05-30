@@ -1,6 +1,6 @@
 const params = new URLSearchParams(location.search);
 const site = params.get("site") || "this website";
-const backgrounds = ["jose", "slipper"];
+const backgrounds = ["jose", "slipper", "beavers"];
 const selectedBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
 
 document.querySelector(".blocked").dataset.background = selectedBackground;

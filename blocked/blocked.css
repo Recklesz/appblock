@@ -23,10 +23,7 @@ body {
 }
 
 .blocked[data-background="jose"] {
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.5), transparent 42%),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.4), transparent 50%),
-    url("../assets/jose-blocked-bg.png") center / cover no-repeat;
+  background: url("../assets/jose-blocked-bg.png") center / cover no-repeat;
 }
 
 .blocked[data-background="slipper"] {
@@ -34,6 +31,10 @@ body {
     linear-gradient(270deg, rgba(0, 0, 0, 0.5), transparent 46%),
     linear-gradient(0deg, rgba(0, 0, 0, 0.35), transparent 56%),
     url("../assets/slipper-blocked-bg.png") center / cover no-repeat;
+}
+
+.blocked[data-background="beavers"] {
+  background: url("../assets/beavers-blocked-bg.png") center / cover no-repeat;
 }
 
 .notice {
@@ -55,6 +56,13 @@ body {
   left: auto;
   bottom: clamp(28px, 8vh, 92px);
   transform: rotate(1deg);
+}
+
+.blocked[data-background="beavers"] .notice {
+  top: 50%;
+  left: 50%;
+  bottom: auto;
+  transform: translate(-50%, -50%) rotate(-0.4deg);
 }
 
 .eyebrow {
@@ -91,10 +99,21 @@ h1 {
     background-position: 35% center;
   }
 
+  .blocked[data-background="beavers"] {
+    background-position: center;
+  }
+
   .notice {
     right: auto;
     left: 18px;
     bottom: 18px;
     box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.35);
+  }
+
+  .blocked[data-background="beavers"] .notice {
+    top: 50%;
+    left: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%) rotate(-0.4deg);
   }
 }
