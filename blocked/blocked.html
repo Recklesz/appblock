@@ -3,16 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Site blocked</title>
+    <title>Take one breath</title>
     <link rel="stylesheet" href="blocked.css">
   </head>
   <body>
-    <main class="blocked" data-background="jose" aria-labelledby="title">
-      <section class="notice">
-        <p class="eyebrow">Local Site Blocker</p>
-        <h1 id="title">This site is blocked</h1>
-        <p id="site" class="site"></p>
-        <p class="hint">Open the extension to unblock this website.</p>
+    <main class="pause" data-background="jose" aria-labelledby="question">
+      <div class="image image--soft" aria-hidden="true"></div>
+      <div class="image image--clear" id="imageReveal" aria-hidden="true"></div>
+      <div class="haze" id="haze" aria-hidden="true"></div>
+
+      <section class="breath-cue" id="breathCue" aria-live="polite">
+        <span>Take a slow breath</span>
+      </section>
+
+      <section class="decision" id="decision" aria-hidden="true">
+        <h1 id="question">Open <span id="site">x.com</span>?</h1>
+        <div class="actions">
+          <button id="continueButton" class="continue" type="button" disabled>Continue</button>
+          <button id="leaveButton" class="leave" type="button">Not now</button>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
       </section>
     </main>
     <script type="module" src="blocked.js"></script>

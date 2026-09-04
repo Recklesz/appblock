@@ -1,6 +1,6 @@
-# Local Site Blocker
+# Breathe Before Browsing
 
-A small unpacked Chrome extension for local website blocking. It is inspired by AppBlock's basic desktop behavior: keep a local list of distracting domains, block matching sites and subdomains, and unblock only through the extension UI.
+A small unpacked Chrome extension inspired by One Sec. It inserts one intentional 10-second breath before a distracting website opens, then lets you choose whether to continue.
 
 ## Features
 
@@ -8,7 +8,9 @@ A small unpacked Chrome extension for local website blocking. It is inspired by 
 - Add domains manually, for example `youtube.com`.
 - Open **More** in the popup for manual add, bulk edit, copy, clear, and per-site removal.
 - Manage the full list from the options page when opened from extension details.
-- Redirect blocked pages to a local extension page with randomized background art.
+- Guide users through a calm 4-second inhale and 6-second exhale before revealing the continue action.
+- Grant one intentional visit without removing the site from the blocked list, so the pause returns next time.
+- Start with `x.com` blocked on a fresh installation.
 
 ## Load Locally
 

@@ -1,5 +1,5 @@
 const DEFAULT_STATE = {
-  blockedSites: []
+  blockedSites: ["x.com"]
 };
 
 export async function getState() {
