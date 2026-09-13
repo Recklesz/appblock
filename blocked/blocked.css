@@ -58,13 +58,12 @@ button { font: inherit; }
 
 .image--clear {
   z-index: -2;
-  -webkit-mask-image: radial-gradient(circle 1vmax at 48% 52%, #000 0, transparent 100%);
-  -webkit-mask-repeat: no-repeat;
-  mask-image: radial-gradient(circle 1vmax at 48% 52%, #000 0, transparent 100%);
-  mask-repeat: no-repeat;
+  opacity: 0;
   transform: scale(1.035);
-  will-change: mask-image, -webkit-mask-image, transform;
+  will-change: opacity, transform;
 }
+
+.image--clear canvas { display: block; width: 100%; height: 100%; }
 
 .haze {
   z-index: -1;
